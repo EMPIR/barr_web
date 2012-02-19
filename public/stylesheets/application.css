@@ -1,0 +1,133 @@
+html, body {
+	font-family: Helvetica,sans-serif;
+	font-size: 14px;
+	margin: 0px;
+	padding:0px;
+	color: #555753;
+	background-color: #EBEBEB;
+}
+
+#body-container {
+	width: 960px;
+	margin: 0 auto;
+	zoom: 1;
+	display: block;
+	position: relative;
+	height: auto;
+}
+
+header {
+	width: 240px;
+	float: left;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	margin: 0px;
+	padding: 0px;
+	border-right: solid #FF8C38 1px;
+}
+
+header, #main {
+	position: relative;
+	min-height: 1200px;
+	height: auto;
+}
+
+header .container {
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	float: none;
+	margin: 0 auto;
+	zoom: 1;
+	display: block;
+}
+
+#logo {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+}
+
+#logo img{
+	border:0px;
+}
+
+#main-menu-container {
+	float: none;
+	position: absolute;
+	top: 120px;
+	right: 0;
+	zoom: 1;
+	display: block;
+	font-size: 120%;
+}
+
+#main-menu-container::after {
+	content: ' 0020';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+}
+
+#main-menu {
+	float: right;
+	margin: 0;
+	padding: 0;
+	zoom: 1;
+	display: block;
+}
+
+#main-menu::after {
+	content: ' 0020';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+}
+
+#main-menu li {
+	list-style-type: none;
+	margin-left: 0;
+	float: left;
+	white-space: nowrap;
+}
+
+#main-menu-container li {
+	display: block;
+	float: none;
+	width: 240px;
+	position: relative;
+	float: left;
+	margin-right: 0;
+	margin-left: 0;
+	min-height: 41px;
+	padding: 0;
+	text-align: right;
+}
+
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	image-rendering: optimizeQuality;
+	-ms-interpolation-mode: bicubic;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+}
