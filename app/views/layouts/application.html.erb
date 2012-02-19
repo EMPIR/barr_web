@@ -50,22 +50,23 @@
 
 <body>
 	<div id="body-container">
-		<header>
-			<div class="container">
+			<div id="header">
 				<div id="logo">
 					<%= link_to image_tag('/images/logo.png'), root_url %>
 				</div> <!-- end div id="logo" -->
-				<nav id="main-menu-container" class="menu-container">
-					<ul id="main-menu">
-						<li id="menuHome" class="menu home"><%= link_to 'home', root_url %></li>
-						<li id="menuExpertise"class="menu expertise"><%= link_to 'expertise', expertise_index_path %></li>
-						<li id="menuAbout"class="menu about"><%= link_to 'about', about_index_path %></li>
-						<li id="menuContact" class="menu contact"><%= link_to 'contact', contact_index_path %></li>
-					</ul> <!-- end ul id="main-menu" class="level-1" -->
-				</nav> <!-- nav id="main-menu-container" class="menu-container" -- >
-			</div> <!-- end div class="container" -->
-		</header>
-		<%= yield %>
+				<ul id="main-menu">
+					<li><%= link_to image_tag('/images/home.png', :mouseover => '/images/home-hover.png'), root_url %></li>
+					<li><%= link_to image_tag('/images/expertise.png', :mouseover => '/images/expertise-hover.png'), expertise_index_path %></li>
+					<li><%= link_to image_tag('/images/aboutus.png', :mouseover => '/images/aboutus-hover.png'), about_index_path %></li>
+					<li><%= link_to image_tag('/images/contactus.png', :mouseover => '/images/contactus-hover.png'), contact_index_path %></li>
+				</ul> <!-- end ul id="main-menu" class="level-1" -->
+			</div> <!-- end div id="header" -->
+		<div id="main">
+			<div id="showcase">
+					slideshow
+			</div> <!-- end div id="showcase" -->
+					<%= yield %>
+		</div> <!-- div id="main" -->
 	</div> <!-- end div id="body-container" -->
 </body>
 </html>
