@@ -97,6 +97,21 @@ header .container {
 	white-space: nowrap;
 }
 
+#main-menu .active{
+	
+	      background-color : #eee;
+	      font-weight : '';
+	      color :rgb(0,40,244);
+}
+
+#main-menu .selected{
+	
+	      background-color : #ccc;
+	      font-weight : '';
+	      color :rgb(0,40,244);
+		  border:1px solid green;
+}
+
 #main-menu-container li {
 	display: block;
 	float: none;
