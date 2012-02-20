@@ -139,7 +139,7 @@ p{
 	font:arial;
 	size:14px;
 	color:#000;
-	padding:15px 15px 0px 15px;
+	padding:15px 0px 0px 15px;
 	margin:0px;
 	text-align:justify;
 }
@@ -148,7 +148,7 @@ p.expertise{
 	font:arial;
 	size:14px;
 	color:#000;
-	padding:35px 15px 0px 15px;
+	padding:35px 0px 0px 15px;
 	margin:0px;
 	text-align:justify;
 }
