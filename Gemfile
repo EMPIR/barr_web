@@ -29,3 +29,7 @@ gem 'rails', '3.0.9'
 # group :development, :test do
 #   gem 'webrat'
 # end
+group :production do
+  # gems specifically for Heroku go here
+  gem "pg"
+end
