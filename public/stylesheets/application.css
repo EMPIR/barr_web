@@ -1,6 +1,24 @@
+* 
+{
+margin:0px;
+padding:0px;
+}
+
+h1,h2,h3,h4,h5,h6,
+span,p,ul,li,
+form,input,object {
+	margin:0px;
+	padding:0px;
+	
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
 html{
 	margin:0px;
 	padding:0px;
+	
 }
 
 body{
@@ -9,6 +27,7 @@ body{
 	padding:0px;
 	width:960px;
 	min-height:1200px;
+	font:normal 15px Arial, Helvetica, sans-serif;
 }
 
 img{
@@ -47,6 +66,35 @@ img{
 	margin:0px;
 	padding:0px;
 }
+
+
+.menu{
+	background:url(/images/menu-long.png) no-repeat;
+	width:145px;
+	height:50px;
+}
+.menu a{
+	width:145px;
+	text-align:right;
+	line-height:50px;
+	color:#FFF;
+	font-size:20px;
+	text-decoration:none;
+	margin-left:20px;
+}
+/*#menu-home a{
+	
+	margin-left:82px;
+}
+#menu-expert a{
+	
+	margin-left:82px;
+}
+*/
+
+
+
+
 
 
 #main{

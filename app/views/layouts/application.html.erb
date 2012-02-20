@@ -11,16 +11,31 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-			$("#menuHome").addClass("selected");
+			$('#showcase')
+			            .cycle({
+			                fx: 'scrollHorz',  // Effects: http://jquery.malsup.com/cycle/browser.html
+			                timeout: 5000,
+			                next: '#slideshow_next',
+			                prev: '#slideshow_previous',
+			                pause: 1
+
+			            });
+		
+		
+			var activeMenuItem = $("#menu-home").attr('id');
+			$("#menu-home").animate({width:'190px'},{queue:false,duration:0});
 			
 			$("#main-menu li").each(function() {
 			  if(window.location.href != "<%=root_url%>"){	
 			  	if($(this).children('a').attr('href') == window.location.pathname) {
 			    	
-				 	$(this).addClass("selected");
+				 	$(this).animate({width:'190px'},{queue:false,duration:0});
+						
+					activeMenuItem =  $(this).attr('id');
+						
 			   	}
 			   	else{
-					$(this).removeClass("selected");
+					$(this).animate({width:'145px'},{queue:false,duration:0});
 					}
 				}
 			});
@@ -30,17 +45,31 @@
 			      'font-weight' : '',
 			      'color' : 'rgb(0,40,244)'
 			    }
-			$(".menu").mouseover(function(){
+			$(".menu").hover(function(){
+					if($(this).attr('id') != activeMenuItem)
+					
+					{
+				$(this).animate({width:'165px'},{queue:false,duration:500});
+			}
+							},
+							function(){
+								
+								if($(this).attr('id') != activeMenuItem)
+								
+								{
+									$(this).animate({width:'145px'},{queue:false,duration:500});
+								}						
+					
+				});
 				
-				/*$(this).css("cssObj");*/
-				$(this).addClass("active");
-			});
+				
+				
+				
 			
-			$(".menu").mouseout(function(){
-				
-				/*$(this).css("cssObj");*/
-				$(this).removeClass("active");
-			});
+			
+			
+			
+			
 			
 		
 	 });
@@ -54,16 +83,22 @@
 				<div id="logo">
 					<%= link_to image_tag('/images/logo.png'), root_url %>
 				</div> <!-- end div id="logo" -->
+				<!-- :mouseover => '/images/home-hover.png'-->
 				<ul id="main-menu">
-					<li><%= link_to image_tag('/images/home.png', :mouseover => '/images/home-hover.png'), root_url %></li>
-					<li><%= link_to image_tag('/images/expertise.png', :mouseover => '/images/expertise-hover.png'), expertise_index_path %></li>
-					<li><%= link_to image_tag('/images/aboutus.png', :mouseover => '/images/aboutus-hover.png'), about_index_path %></li>
-					<li><%= link_to image_tag('/images/contactus.png', :mouseover => '/images/contactus-hover.png'), contact_index_path %></li>
+					<li class="menu" id="menu-home"><%= link_to 'Home',root_url %></li>
+					<li class="menu" id="menu-expert"><%= link_to 'Expertise', expertise_index_path, :class=>'menu-text' %></li>
+					<li class="menu" id="menu-about"><%= link_to 'About', about_index_path %></li>
+					<li class="menu" id="menu-contact"><%= link_to 'Contact', contact_index_path %></li>
 				</ul> <!-- end ul id="main-menu" class="level-1" -->
 			</div> <!-- end div id="header" -->
 		<div id="main">
 			<div id="showcase">
-					slideshow
+				
+					<%= image_tag '/images/slideshow-6.png' %>
+					<%= image_tag '/images/slideshow-2.png' %>
+					<%= image_tag '/images/slideshow-3.png' %>
+					<%= image_tag '/images/slideshow-4.png' %>
+					<%= image_tag '/images/slideshow-5.png' %>
 			</div> <!-- end div id="showcase" -->
 					<%= yield %>
 		</div> <!-- div id="main" -->
