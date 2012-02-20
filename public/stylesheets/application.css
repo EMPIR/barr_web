@@ -152,3 +152,16 @@ p.expertise{
 	margin:0px;
 	text-align:justify;
 }
+
+#footer-container{
+	margin:0px auto;
+}
+
+#footer-container p.copy {
+	clear:left;
+	color:#000;
+	font-size:10px;
+	text-align:center;
+	padding-top:10px;
+	padding-bottom:0px;
+	}
