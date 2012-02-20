@@ -79,6 +79,7 @@
 
 <body>
 	<div id="body-container">
+		<div id="header-main-container">
 			<div id="header">
 				<div id="logo">
 					<%= link_to image_tag('/images/logo.png'), root_url %>
@@ -91,17 +92,18 @@
 					<li class="menu" id="menu-contact"><%= link_to 'Contact', contact_index_path %></li>
 				</ul> <!-- end ul id="main-menu" class="level-1" -->
 			</div> <!-- end div id="header" -->
-		<div id="main">
-			<div id="showcase">
+			<div id="main">
+				<div id="showcase">
 				
 					<%= image_tag '/images/slideshow-6.png' %>
 					<%= image_tag '/images/slideshow-2.png' %>
 					<%= image_tag '/images/slideshow-3.png' %>
 					<%= image_tag '/images/slideshow-4.png' %>
 					<%= image_tag '/images/slideshow-5.png' %>
-			</div> <!-- end div id="showcase" -->
+				</div> <!-- end div id="showcase" -->
 					<%= yield %>
-		</div> <!-- div id="main" -->
+			</div> <!-- div id="main" -->
+		</div> <!-- end div id="header-main-container" -->
 	</div> <!-- end div id="body-container" -->
 </body>
 </html>
