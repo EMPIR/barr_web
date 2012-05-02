@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Barr Restoration, LLC </title>
+  <link href="stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="javascripts/prototype.js" type="text/javascript"></script>
+<script src="javascripts/effects.js" type="text/javascript"></script>
+<script src="javascripts/dragdrop.js" type="text/javascript"></script>
+<script src="javascripts/controls.js" type="text/javascript"></script>
+<script src="javascripts/rails.js" type="text/javascript"></script>
+<script src="javascripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="javascripts/jquery-ui-1.8.17.custom.min.js" type="text/javascript"></script>
+<script src="javascripts/jquery.cycle.all.min.js" type="text/javascript"></script>
+<script src="javascripts/jquery.easing.1.3.js" type="text/javascript"></script>
+<script src="javascripts/application.js" type="text/javascript"></script>
+
+
+</head>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+			$('#showcase')
+			            .cycle({
+			                fx: 'scrollHorz',  // Effects: http://jquery.malsup.com/cycle/browser.html
+			                timeout: 5000,
+			                next: '#slideshow_next',
+			                prev: '#slideshow_previous',
+			                pause: 1
+
+			            });
+		
+		
+			var activeMenuItem = $("#menu-home").attr('id');
+			$("#menu-home").animate({width:'190px'},{queue:false,duration:0});
+			
+			$("#main-menu li").each(function() {
+			  if(window.location.href != "http://0.0.0.0:3000/"){	
+			  	if($(this).children('a').attr('href') == window.location.pathname) {
+			    	
+				 	$(this).animate({width:'190px'},{queue:false,duration:0});
+						
+					activeMenuItem =  $(this).attr('id');
+						
+			   	}
+			   	else{
+					$(this).animate({width:'145px'},{queue:false,duration:0});
+					}
+				}
+			});
+	   // do stuff when DOM is ready
+			var cssObj = {
+			      'background-color' : '#ddd',
+			      'font-weight' : '',
+			      'color' : 'rgb(0,40,244)'
+			    }
+			$(".menu").hover(function(){
+					if($(this).attr('id') != activeMenuItem)
+					
+					{
+				$(this).animate({width:'165px'},{queue:false,duration:500});
+			}
+							},
+							function(){
+								
+								if($(this).attr('id') != activeMenuItem)
+								
+								{
+									$(this).animate({width:'145px'},{queue:false,duration:500});
+								}						
+					
+				});
+				
+				
+				
+				
+			
+			
+			
+			
+			
+			
+		
+	 });
+	
+	
+</script>
+
+<body>
+	<div id="body-container">
+		<div id="header-main-container">
+			<div id="header">
+				<div id="logo">
+					<a href="index.html"><img alt="Barr_logo240" src="images/barr_logo240.png" /></a>
+				</div> <!-- end div id="logo" -->
+				<!-- :mouseover => '/images/home-hover.png'-->
+				<ul id="main-menu">
+					<li class="menu" id="menu-home"><a href="index.html">Home</a></li>
+					<li class="menu" id="menu-expert"><a href="/expertise/index" class="menu-text">Expertise</a></li>
+					<li class="menu" id="menu-about"><a href="/about/index">About</a></li>
+					<li class="menu" id="menu-contact"><a href="/contact/index">Contact</a></li>
+				</ul> <!-- end ul id="main-menu" class="level-1" -->
+			</div> <!-- end div id="header" -->
+			<div id="main">
+				<div id="showcase">
+					<img alt="Slideshow-1" src="images/slideshow-1.jpg?1329707793" />
+					<img alt="Slideshow-4" src="images/slideshow-4.jpg?1329708139" />
+					<img alt="Slideshow-7" src="images/slideshow-7.jpg?1329708899" />
+					<img alt="Slideshow-5" src="images/slideshow-5.jpg?1329708257" />
+					<img alt="Slideshow-6" src="images/slideshow-6.jpg?1329708290" />
+			</div> <!-- end div id="showcase" -->
+					<p>
+	This is the home page.  It can either be the same as the About page, or it can change depending on the projects you are currently on or have just finished to keep things fresh.
+</p>
+<p>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur metus non tortor bibendum sed interdum est laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed in risus elit, eget accumsan orci. Curabitur consectetur, ligula et auctor lacinia, felis purus fringilla orci, nec egestas felis turpis ac diam. Vestibulum eu leo mi. Suspendisse luctus nisi laoreet sapien adipiscing sed vulputate tortor lacinia. Curabitur ut mi eros. Ut nibh turpis, mattis non vehicula et, accumsan in sapien.
+</p>
+<p>
+	Cras a mi odio. Integer id tortor vel libero aliquet sollicitudin id nec justo. Quisque gravida massa eu turpis fringilla vehicula. Morbi commodo pellentesque felis, at congue quam dapibus id. Vestibulum bibendum, tellus quis sollicitudin lobortis, libero metus aliquet justo, id tristique libero tellus vel dolor. Fusce posuere elementum ullamcorper. Nullam placerat felis at mauris laoreet interdum. Suspendisse molestie laoreet fermentum. Curabitur nisi massa, feugiat ac blandit vel, vehicula id leo. Donec non lectus augue, at venenatis neque. Cras sodales iaculis porttitor. Sed tempor dignissim accumsan. Sed tempus risus vitae erat rutrum facilisis.
+	</p>
+			</div> <!-- div id="main" -->
+		</div> <!-- end div id="header-main-container" -->
+		
+
+	</div> <!-- end div id="body-container" -->
+	<div id="footer-container">
+		<p class="copy">Barr Restoration, Inc. | 1547 Pine Needles Ln, Lexington, KY 40513-1503| 2012 © Ellen Guinnip</p>
+	</div>
+	
+</body>
+</html>
