@@ -20,6 +20,9 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
+			$('#expertise').hide();
+			$('#about').hide();
+			$('#contact').hide();
 			$('#showcase')
 			            .cycle({
 			                fx: 'scrollHorz',  // Effects: http://jquery.malsup.com/cycle/browser.html
@@ -29,12 +32,13 @@
 			                pause: 1
 
 			            });
-		
-		
+			var prevActiveTextID;
+			var activeTextID = $("#home");
+			var activeMenuID = $("#menu-home");
 			var activeMenuItem = $("#menu-home").attr('id');
 			$("#menu-home").animate({width:'190px'},{queue:false,duration:0});
 			
-			$("#main-menu li").each(function() {
+			/*$("#main-menu li").each(function() {
 			  if(window.location.href != "http://0.0.0.0:3000/"){	
 			  	if($(this).children('a').attr('href') == window.location.pathname) {
 			    	
@@ -47,7 +51,7 @@
 					$(this).animate({width:'145px'},{queue:false,duration:0});
 					}
 				}
-			});
+			});*/
 	   // do stuff when DOM is ready
 			var cssObj = {
 			      'background-color' : '#ddd',
@@ -56,24 +60,55 @@
 			    }
 			$(".menu").hover(function(){
 					if($(this).attr('id') != activeMenuItem)
-					
 					{
-				$(this).animate({width:'165px'},{queue:false,duration:500});
-			}
-							},
-							function(){
+						$(this).animate({width:'165px'},{queue:false,duration:500});
+					}
+				},
+				function(){
 								
-								if($(this).attr('id') != activeMenuItem)
-								
-								{
-									$(this).animate({width:'145px'},{queue:false,duration:500});
-								}						
+					if($(this).attr('id') != activeMenuItem)	
+					{
+						$(this).animate({width:'145px'},{queue:false,duration:500});
+					}						
 					
+			});
+				
+			
+			function switchContent(thisID, thisText)
+			{
+				
+				prevActiveTextID = activeTextID;
+				activeTextID = $(thisText);
+				activeMenuID.animate({width:'145px'},{queue:false,duration:500});
+				$(thisID).animate({width:'190px'},{queue:false,duration:500});
+				activeMenuItem = $(thisID).attr('id');
+				activeMenuID = $(thisID);
+				$(prevActiveTextID).fadeOut('slow',function(){
+					$(activeTextID).fadeIn('slow', function() {
+					        // Animation complete
+					      });
 				});
+			}
 				
-				
-				
-				
+			$("#menu-expert").click(function(){
+				switchContent("#menu-expert", "#expertise");
+			});
+			
+			$("#menu-home").click(function(){
+				switchContent("#menu-home", "#home");	
+			});
+			
+			$("#menu-about").click(function(){
+				switchContent("#menu-about", "#about");
+			});
+			
+			$("#menu-contact").click(function(){
+				switchContent("#menu-contact", "#contact");
+				var iframe = document.getElementById("mapFrame");
+				iframe.src = iframe.src;
+			});
+			
+			
 			
 			
 			
@@ -88,44 +123,108 @@
 
 <body>
 	<div id="body-container">
-		<div id="header-main-container">
+		<div id="header-main-container"> 
 			<div id="header">
 				<div id="logo">
 					<a href="index.html"><img alt="Barr_logo240" src="images/barr_logo240.png" /></a>
-				</div> <!-- end div id="logo" -->
-				<!-- :mouseover => '/images/home-hover.png'-->
+				</div> 
 				<ul id="main-menu">
-					<li class="menu" id="menu-home"><a href="index.html">Home</a></li>
-					<li class="menu" id="menu-expert"><a href="/expertise/index" class="menu-text">Expertise</a></li>
-					<li class="menu" id="menu-about"><a href="/about/index">About</a></li>
-					<li class="menu" id="menu-contact"><a href="/contact/index">Contact</a></li>
-				</ul> <!-- end ul id="main-menu" class="level-1" -->
-			</div> <!-- end div id="header" -->
+					<li class="menu" id="menu-home"><a href="#">Home</a></li>
+					<li class="menu" id="menu-expert"><a href="#">Expertise</a></li>
+					<li class="menu" id="menu-about"><a href="#">About</a></li>
+					<li class="menu" id="menu-contact"><a href="#">Contact</a></li>
+				</ul> 
+			</div> 
 			<div id="main">
-				<div id="showcase">
+			<div id="showcase">
 					<img alt="Slideshow-1" src="images/slideshow-1.jpg?1329707793" />
 					<img alt="Slideshow-4" src="images/slideshow-4.jpg?1329708139" />
 					<img alt="Slideshow-7" src="images/slideshow-7.jpg?1329708899" />
 					<img alt="Slideshow-5" src="images/slideshow-5.jpg?1329708257" />
 					<img alt="Slideshow-6" src="images/slideshow-6.jpg?1329708290" />
-			</div> <!-- end div id="showcase" -->
-					<p>
-	This is the home page.  It can either be the same as the About page, or it can change depending on the projects you are currently on or have just finished to keep things fresh.
-</p>
-<p>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur metus non tortor bibendum sed interdum est laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed in risus elit, eget accumsan orci. Curabitur consectetur, ligula et auctor lacinia, felis purus fringilla orci, nec egestas felis turpis ac diam. Vestibulum eu leo mi. Suspendisse luctus nisi laoreet sapien adipiscing sed vulputate tortor lacinia. Curabitur ut mi eros. Ut nibh turpis, mattis non vehicula et, accumsan in sapien.
-</p>
-<p>
-	Cras a mi odio. Integer id tortor vel libero aliquet sollicitudin id nec justo. Quisque gravida massa eu turpis fringilla vehicula. Morbi commodo pellentesque felis, at congue quam dapibus id. Vestibulum bibendum, tellus quis sollicitudin lobortis, libero metus aliquet justo, id tristique libero tellus vel dolor. Fusce posuere elementum ullamcorper. Nullam placerat felis at mauris laoreet interdum. Suspendisse molestie laoreet fermentum. Curabitur nisi massa, feugiat ac blandit vel, vehicula id leo. Donec non lectus augue, at venenatis neque. Cras sodales iaculis porttitor. Sed tempor dignissim accumsan. Sed tempus risus vitae erat rutrum facilisis.
-	</p>
-			</div> <!-- div id="main" -->
-		</div> <!-- end div id="header-main-container" -->
-		
+			</div> 
+			<div id="home" class="text">
 
-	</div> <!-- end div id="body-container" -->
+				<p>
+					Robert H. Barr Restoration, LLC is the most <em>customer-service oriented home improvement </em> company in the Lexington area. 
+					Robert makes sure to take the time needed to keep his customers coming back again and again! 
+				</p>	
+				<p>
+					Robert H. Barr Restoration, LLC specializes in home <em>restorations</em> and <em>renovations</em>.
+				</p>
+					<!--Here at Robert H. Barr Restoration, LLC, we specialize in restoring older homes and updating newer ones. 
+					We focus on hardwood floors and painting, but we can also do custom kitchens, bathrooms, and any other construction/ restoration needs you may have. 
+					This is all done by 1 contractor Robert H. Barr Restoration, LLC. Call us today and begin your home improvement project now! 
+					As a former educator, Robert has a great demeanor and understands the need for great customer service! 
+					Some more facts about us: We are an A+ rated member of the Better Business Bureau. 
+					We only use Porter Professional paint. Materials purchased will be provided at the contractor's price. We are proud to be a Christian-owned business.
+					-->
+				</p>
+
+				</div> <!-- div id="text" -->
+
+				<div id="expertise" class="text">
+					<p>
+					
+					Here at Robert H. Barr Restoration, LLC, we specialize in <em>restorations</em> and <em>renovations</em>.
+					</p>
+					<p>
+						Our specialties include, but are not limited to, the following:
+					</p>	
+						<ul>
+							<li>Hardwood Floors</li>
+							<li>Painting</li>
+							<li>Kitchens</li>
+							<li>Bathrooms</li>
+							<li>Remodeling/Additions</li>	
+						</ul>	 
+					<p>
+						We only use Porter Professional paint. Materials purchased will be provided at the contractor's price.
+					</p>
+					<p class="centeredImage">
+					<img width="100"  src="images/porter_paints_logo.jpg" />
+					</p>
+				</div> <!-- div id="expertise" -->
+				
+				<div id="about" class="text">
+					<p>
+					Robert H. Barr Restoration, LLC has been in doing custom building, restoration, and renovations in Lexington Kentucky since 2010.
+					</p>
+					<p>
+					As a former educator, Robert has a great demeanor and understands the need for great customer service! 
+					</p>
+					<p>
+						Robert H. Barr Restoration, LLC is an an A+ rated member of the Better Business Bureau. Click <a href="http://www.bbb.org/lexington/business-reviews/painting-contractors/robert-h-barr-restoration-in-lexington-ky-184157746" target="_blank">here</a> for details.
+						
+					</p>
+					<p>
+						We are proud to be a Christian-owned business.
+						
+					</p>
+				</div> 
+				
+				
+				
+				<div id="contact" class="text">
+					<h1>Contact Information</h1>
+					<p>
+						<a href="callto:8595597002">(859)-559-7002</a>	
+					</p>
+					<p>
+						1547 Pine Needles Ln, Lexington, KY 40513-1503
+					</p>
+					<br/>
+					<iframe id="mapFrame" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;q=1547+Pine+Needles+Ln,+Lexington,+KY+40513-1503&amp;ie=UTF8&amp;hq=&amp;hnear=1547+Pine+Needles+Ln,+Lexington,+Kentucky+40513&amp;t=m&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?hl=en&amp;q=1547+Pine+Needles+Ln,+Lexington,+KY+40513-1503&amp;ie=UTF8&amp;hq=&amp;hnear=1547+Pine+Needles+Ln,+Lexington,+Kentucky+40513&amp;t=m&amp;z=14&amp;iwloc=A&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+				</div>
+				
+			</div> <!-- div id="main" -->
+		</div><!-- end div id="header-main-container" -->
+		
+    
+	</div>  <!-- end div id="body-container" -->
 	<div id="footer-container">
-		<p class="copy">Barr Restoration, Inc. | 1547 Pine Needles Ln, Lexington, KY 40513-1503| 2012 © Ellen Guinnip</p>
+			<p class="copy">Barr Restoration, Inc. | 1547 Pine Needles Ln, Lexington, KY 40513-1503| 2012 &#169; Ellen Guinnip</p>
 	</div>
-	
+
 </body>
 </html>

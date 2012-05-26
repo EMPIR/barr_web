@@ -27,17 +27,19 @@ body{
 	padding:0px;
 	width:960px;
 	min-height:900px;
-	font:normal 15px Arial, Helvetica, sans-serif;
+	font:normal 18px Arial, Helvetica, sans-serif;
 }
 
 img{
 	border:0px;
 }
 
+h1{
+	margin:10px;
+}
 #body-container{
 	width: 1020px;
 	margin:0px auto;
-	padding:0px;
 	min-height:inherit;
 	background-color:#fff;
 	border-left:1px solid gray;
@@ -55,6 +57,7 @@ img{
 	width:260px;
 	min-height:inherit;
 	border-right: solid #FF8C38 1px;
+	float:left;
 }
 
 #logo{
@@ -101,12 +104,37 @@ img{
 	margin-left:82px;
 }
 */
+em{
+	font-style:italic;
+	font-size:1.1em;
+}
 
+  .centeredImage
+    {
+    text-align:center;
+    margin-top:0px;
+    margin-bottom:0px;
+    padding:0px;
+    }
 #main{
-	width:720px;
-	position:absolute;
-	margin-left:260px;
+	width:700px;
+	/*position:absolute;*/
+	padding:1px 0px 0px 0px;
+	margin:0px 0px 0px 260px;
 	top:0;
+}
+
+#main p{
+	font-size:1em;
+}
+
+li{
+	margin-left:100px;
+}
+
+div.text{
+	border-left:1px solid #f85c01;
+	padding-bottom:20px;
 }
 
 #showcase{
@@ -155,7 +183,11 @@ p.expertise{
 }
 
 #footer-container{
+	width: 1020px;
 	margin:0px auto;
+	background-color:grey;
+	border:1px solid black;
+	padding-bottom:20px;
 }
 
 #footer-container p.copy {
