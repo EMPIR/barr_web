@@ -88,7 +88,8 @@
 				activeMenuID = $(thisID);
 				$(prevActiveTextID).fadeOut('slow',function(){
 					$(activeTextID).fadeIn('slow', function() {
-					        // Animation complete
+					        var iframe = document.getElementById("mapFrame");
+							iframe.src = iframe.src;
 					      });
 				});
 				
@@ -112,11 +113,8 @@
 			
 			$("#menu-contact").click(function(){
 				switchContent("#menu-contact", "#contact");
-				var iframe = document.getElementById("mapFrame");
-				iframe.src = iframe.src;
-				switchContent("#menu-contact", "#contact");
-				var iframe = document.getElementById("mapFrame");
-				iframe.src = iframe.src;
+				
+				
 			});
 			
 			
