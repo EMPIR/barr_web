@@ -22,7 +22,6 @@
 	$(document).ready(function() {
 			$('#expertise').hide();
 			$('#about').hide();
-			$('#contact').hide();
 			$('#showcase')
 			            .cycle({
 			                fx: 'scrollHorz',  // Effects: http://jquery.malsup.com/cycle/browser.html
@@ -32,6 +31,10 @@
 			                pause: 1
 
 			            });
+			
+			
+			$('#contact').hide();
+			
 			var prevActiveTextID;
 			var activeTextID = $("#home");
 			var activeMenuID = $("#menu-home");
@@ -88,21 +91,29 @@
 					        // Animation complete
 					      });
 				});
+				
+				
 			}
 				
 			$("#menu-expert").click(function(){
 				switchContent("#menu-expert", "#expertise");
+				
 			});
 			
 			$("#menu-home").click(function(){
-				switchContent("#menu-home", "#home");	
+				switchContent("#menu-home", "#home");
+					
 			});
 			
 			$("#menu-about").click(function(){
 				switchContent("#menu-about", "#about");
+				
 			});
 			
 			$("#menu-contact").click(function(){
+				switchContent("#menu-contact", "#contact");
+				var iframe = document.getElementById("mapFrame");
+				iframe.src = iframe.src;
 				switchContent("#menu-contact", "#contact");
 				var iframe = document.getElementById("mapFrame");
 				iframe.src = iframe.src;
@@ -146,12 +157,17 @@
 			<div id="home" class="text">
 
 				<p>
-					Robert H. Barr Restoration, LLC is the most <em>customer-service oriented home improvement </em> company in the Lexington area. 
-					Robert makes sure to take the time needed to keep his customers coming back again and again! 
+					Robert H. Barr Restoration, LLC is the most <em>customer-service oriented home improvement </em> company in the Lexington, Kentucky area. 
+					Robert takes the time needed to create customers who come back again and again!
 				</p>	
 				<p>
 					Robert H. Barr Restoration, LLC specializes in home <em>restorations</em> and <em>renovations</em>.
-				</p>
+					Barr Restoration is made up of a team of skilled and dedicated specialists.  We are trained with all the necessary techniques to turn the rooms of your imagination into reality.
+					We love what we do and stand by our work.
+				</p>				
+				<p>
+					We give free estimates for projects, and will talk with you about your budget and what you would like done.  We offer the finest craftsmanship at an affordable price.  Call  <a href="callto:8595597002">(859)-559-7002</a> today to begin making <em>the home of your dreams a reality</em>.
+					</p>
 					<!--Here at Robert H. Barr Restoration, LLC, we specialize in restoring older homes and updating newer ones. 
 					We focus on hardwood floors and painting, but we can also do custom kitchens, bathrooms, and any other construction/ restoration needs you may have. 
 					This is all done by 1 contractor Robert H. Barr Restoration, LLC. Call us today and begin your home improvement project now! 
@@ -166,10 +182,10 @@
 				<div id="expertise" class="text">
 					<p>
 					
-					Here at Robert H. Barr Restoration, LLC, we specialize in <em>restorations</em> and <em>renovations</em>.
+					Here at Robert H. Barr Restoration, LLC, we specialize in <em>restorations</em> and <em>renovations</em>.  We have over 30 years of combined experience, and are a license and insured  home improvement company.   We offer no cost estimates and will work with you to make sure the job is executed with <em>100% satisfaction</em>.   It is our goal to create positive working relationships with our clients who return for future projects.  Please call <a href="callto:8595597002">(859)-559-7002</a> if you have any questions.
 					</p>
 					<p>
-						Our specialties include, but are not limited to, the following:
+						Our specialties include:
 					</p>	
 						<ul>
 							<li>Hardwood Floors</li>
@@ -190,16 +206,19 @@
 					<p>
 					Robert H. Barr Restoration, LLC has been in doing custom building, restoration, and renovations in Lexington Kentucky since 2010.
 					</p>
-					<p>
+					<p>	
+						Barr Restoration is led by Robert H. Barr, the president and founder.
 					As a former educator, Robert has a great demeanor and understands the need for great customer service! 
 					</p>
 					<p>
-						Robert H. Barr Restoration, LLC is an an A+ rated member of the Better Business Bureau. Click <a href="http://www.bbb.org/lexington/business-reviews/painting-contractors/robert-h-barr-restoration-in-lexington-ky-184157746" target="_blank">here</a> for details.
+						Robert H. Barr Restoration, LLC is an A+ rated member of the Better Business Bureau. Click <a href="http://www.bbb.org/lexington/business-reviews/painting-contractors/robert-h-barr-restoration-in-lexington-ky-184157746" target="_blank">here</a> for details.
 						
 					</p>
 					<p>
 						We are proud to be a Christian-owned business.
-						
+					</p>
+					<p>
+						Have any questions?  Please call <a href="callto:8595597002">(859)-559-7002</a> to speak with us!
 					</p>
 				</div> 
 				
@@ -208,6 +227,7 @@
 				<div id="contact" class="text">
 					<h1>Contact Information</h1>
 					<p>
+						<b>Robert Barr:</b>
 						<a href="callto:8595597002">(859)-559-7002</a>	
 					</p>
 					<p>
@@ -223,7 +243,7 @@
     
 	</div>  <!-- end div id="body-container" -->
 	<div id="footer-container">
-			<p class="copy">Barr Restoration, Inc. | 1547 Pine Needles Ln, Lexington, KY 40513-1503| 2012 &#169; Ellen Guinnip</p>
+			<p class="copy">Barr Restoration, Inc. | 1547 Pine Needles Ln, Lexington, KY 40513-1503| 2012 &#169; Website by Ellen and David</p>
 	</div>
 
 </body>
